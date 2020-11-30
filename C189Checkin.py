@@ -59,7 +59,7 @@ def main():
                     }
                 sc = requests.post(scurl, data=data)
     else:
-        description = response.json()['description']
+        description = response.json(force=True)['description']
         print(f"抽奖获得{description}")
     #第二次抽奖
     response = s.get(url2,headers=headers)
@@ -75,7 +75,7 @@ def main():
                     }
                 sc = requests.post(scurl, data=data)
     else:
-        description = response.json()['description']
+        description = response.json(force=True)['description']
         print(f"抽奖获得{description}")
 
 BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
